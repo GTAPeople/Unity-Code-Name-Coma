@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent (typeof(BoxCollider2D))]
 public class BoxGizmos : MonoBehaviour {
 
-	public Color _gizmoColor;
+	public Color gizmoColor;
 
 	private float posX;
 	private float posY;
@@ -24,7 +24,7 @@ public class BoxGizmos : MonoBehaviour {
 		posX = GetComponent<BoxCollider2D>().size.x;
 		posY = GetComponent<BoxCollider2D>().size.y;
 		posV3 = new Vector3 (transform.position.x + GetComponent<BoxCollider2D>().center.x, transform.position.y + GetComponent<BoxCollider2D>().center.y, transform.position.z);
-		Gizmos.color = _gizmoColor;
+		Gizmos.color = gizmoColor;
 		Gizmos.DrawCube(posV3, new Vector3(posX,posY,transform.position.z));
 	}
 }
