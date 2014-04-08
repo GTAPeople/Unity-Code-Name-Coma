@@ -22,8 +22,8 @@ public class CameraFollow : MonoBehaviour {
 	void Start () {
 		float vertExtent = Camera.main.camera.orthographicSize;  
 		float horzExtent = vertExtent * Camera.main.pixelWidth / Camera.main.pixelHeight;
-		minX = horzExtent + deadStart.transform.position.x + (deadEnd.GetComponent<BoxCollider>().size.x/2);
-		maxX = deadEnd.transform.position.x - deadEnd.GetComponent<BoxCollider>().size.x/2 - horzExtent;
+		minX = horzExtent + deadStart.transform.position.x + (deadEnd.GetComponent<BoxCollider2D>().size.x/2);
+		maxX = deadEnd.transform.position.x - deadEnd.GetComponent<BoxCollider2D>().size.x/2 - horzExtent;
 //		Debug.Log (Screen.width);
 	}	
 	
