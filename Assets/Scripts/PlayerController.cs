@@ -51,8 +51,9 @@ public class PlayerController : MonoBehaviour {
 //		if(_grounded){
 //			_doubleJump = false;
 //		}
-
-		anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);
+		if(!grounded){
+			anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);
+		}
 
 //		if (!_grounded){
 //			return;
