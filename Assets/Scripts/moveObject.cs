@@ -5,6 +5,7 @@ public class moveObject : MonoBehaviour {
 
 	public GameObject next;
 	public float speed = 3.0f;
+	public float timePoint = 0.2f;
 
 	private Vector3 posOrigin;
 
@@ -24,5 +25,6 @@ public class moveObject : MonoBehaviour {
 			thisTrans.position = Vector3.Lerp(startPos, endPos, i);
 			yield return null;
 		}
+		yield return new WaitForSeconds (timePoint);
 	}
 }
