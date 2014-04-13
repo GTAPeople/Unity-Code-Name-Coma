@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveObject : MonoBehaviour {
+public class MoveObject2Next1Point : MonoBehaviour {
 
-	public GameObject target;
+	public GameObject secondPosition;
 	public float speed = 3.0f;
 	public float timePoint = 0.2f;
 
@@ -12,8 +12,8 @@ public class MoveObject : MonoBehaviour {
 	IEnumerator Start(){
 		posOrigin = transform.position;
 		while(true){
-			yield return StartCoroutine(movePos(transform, posOrigin, target.transform.position, speed));
-			yield return StartCoroutine(movePos(transform, target.transform.position, posOrigin, speed));
+			yield return StartCoroutine(movePos(transform, posOrigin, secondPosition.transform.position, speed));
+			yield return StartCoroutine(movePos(transform, secondPosition.transform.position, posOrigin, speed));
 		}
 	}
 

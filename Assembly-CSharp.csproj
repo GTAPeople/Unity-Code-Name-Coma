@@ -48,7 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoxGizmos.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\MoveObject.cs" />
+     <Compile Include="Assets\Scripts\MoveObject2Next1Point.cs" />
+     <Compile Include="Assets\Scripts\MoveObject2Next2Points.cs" />
+     <Compile Include="Assets\Scripts\MoveObject2Next3Points.cs" />
+     <Compile Include="Assets\Scripts\MoveObjectInCircle.cs" />
      <Compile Include="Assets\Scripts\Pauser.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Sawblade.cs" />
