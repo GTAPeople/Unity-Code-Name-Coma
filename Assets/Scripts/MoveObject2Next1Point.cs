@@ -5,10 +5,11 @@ public class MoveObject2Next1Point : MonoBehaviour {
 
 	public GameObject secondPosition;
 	public float speed = 3.0f;
-	public float timePoint = 0.2f;
+	public float timeDelay = 0.2f;
 
 	private Vector3 posOrigin;
 
+	// Use this for initialization
 	IEnumerator Start(){
 		posOrigin = transform.position;
 		while(true){
@@ -25,6 +26,6 @@ public class MoveObject2Next1Point : MonoBehaviour {
 			thisTrans.position = Vector3.Lerp(startPos, endPos, i);
 			yield return null;
 		}
-		yield return new WaitForSeconds (timePoint);
+		yield return new WaitForSeconds (timeDelay);
 	}
 }

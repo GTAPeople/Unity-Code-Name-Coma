@@ -4,6 +4,7 @@ using System.Collections;
 public class MoveObjectInCircle : MonoBehaviour {
 	public float speed = 3.0f;
 	public float radius = 1.0f;
+	public float speedTimeDelay = 0.0f;
 
 	private float posXOrigin;
 	private float posYOrigin;
@@ -13,11 +14,11 @@ public class MoveObjectInCircle : MonoBehaviour {
 		posXOrigin = transform.position.x;
 		posYOrigin = transform.position.y;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		float xPos = Mathf.Sin(speed*Time.time) * radius + posXOrigin;		
-		float yPos = Mathf.Cos(speed*Time.time) * radius + posYOrigin;
+		float xPos = Mathf.Sin(speed*(Time.time-speedTimeDelay)) * radius + posXOrigin;		
+		float yPos = Mathf.Cos(speed*(Time.time-speedTimeDelay)) * radius + posYOrigin;
 		transform.position = new Vector3 (xPos,yPos,transform.position.z);
 	}
 }
