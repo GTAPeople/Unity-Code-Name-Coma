@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour {
 
 	private float maxX;				// The maximum x coordinate the camera can have.
 	private float minX;				// The minimum x coordinate the camera can have.
-	private float horzExtent;
+	private float horzExtent;		// The size of horizontal of the screen.
 	
 	private Transform player;		// Reference to the player's transform.
 
@@ -64,19 +64,31 @@ public class CameraFollow : MonoBehaviour {
 		// If the player has moved beyond the x margin...
 		if(CheckXMargin()){
 			// To make the camera move right, not left.
-			if(player.position.x>transform.position.x){
+			if(player.position.x > transform.position.x){
 				// ... the target x coordinate should be a Lerp between the camera's current x position and the player's current x position.
 				targetX = Mathf.Lerp(transform.position.x, player.position.x, xSmooth * Time.deltaTime);
-				targetDeadStartX = transform.position.x-horzExtent - (deadStart.GetComponent<BoxCollider2D>().size.x/2);
+			}
+			// To make the camera move left when there no player in the screen
+			if((targetDeadStartX + deadStart.GetComponent<BoxCollider2D>().size.x) <= (transform.position.x - horzExtent)){
+				targetX = Mathf.Lerp(transform.position.x, player.position.x, xSmooth * Time.deltaTime);
 			}
 		}
+
 		// If the player has moved beyond the y margin...
 		if(CheckYMargin()){
 			// ... the target y coordinate should be a Lerp between the camera's current y position and the player's current y position.
 			targetY = Mathf.Lerp(transform.position.y, player.position.y, ySmooth * Time.deltaTime);
 		}
 
-		// Move deadStart while player move right
+		// To move the deadStart to right.
+		if(player.position.x > transform.position.x){
+			targetDeadStartX = Mathf.Lerp(deadStart.transform.position.x,transform.position.x-horzExtent - (deadStart.GetComponent<BoxCollider2D>().size.x/2),xSmooth * Time.deltaTime);
+//			// this next code is for after respawn as an idea, no tested.
+////			targetDeadStartX = player.position.x - Mathf.Abs(player.localScale.x/2);
+		}
+
+
+		// Move deadStart while player move
 //		Debug.Log (targetDeadStartX);
 		deadStart.transform.position = new Vector3(targetDeadStartX,deadStart.transform.position.y,deadStart.transform.position.z);
 
