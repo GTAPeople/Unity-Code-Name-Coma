@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MoveObjectInCircle.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraFollow.cs">
     <Files>
-      <File FileName="Assets\Scripts\MoveObjectInCircle.cs" Line="19" Column="18" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="22" Column="2" />
+      <File FileName="Assets\Scripts\CameraFollow.cs" Line="94" Column="176" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
