@@ -35,4 +35,14 @@ public class GameManager : MonoBehaviour {
 	public void SetCheckpoint(Vector3 cp){
 		_checkpoint = cp;
 	}
+	// Test for load level
+	public void EndLevel(){
+//		if(_currentLevel < _levelCount){
+//			_currentLevel++;
+//			Application.LoadLevel("Level" + _currentLevel);
+//		}
+//		else{
+//			Debug.Log("Game Over");
+//		}
+	}
 }

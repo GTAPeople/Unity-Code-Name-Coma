@@ -27,13 +27,6 @@ public class CameraFollow : MonoBehaviour {
 		minX = horzExtent + deadStart.transform.position.x + (deadStart.GetComponent<BoxCollider2D>().size.x/2);
 		maxX = deadEnd.transform.position.x - deadEnd.GetComponent<BoxCollider2D>().size.x/2 - horzExtent;
 //		Debug.Log (Screen.width);
-	}	
-	
-	void Awake ()
-	{
-		// Setting up the reference.
-//		player = GameObject.FindGameObjectWithTag("Player").transform;
-//		targetDeadStartX = deadStart.transform.position.x;
 	}
 
 	bool CheckXMargin()
@@ -54,6 +47,7 @@ public class CameraFollow : MonoBehaviour {
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		if(player.gameObject){
+
 			TrackPlayer();
 		}
 		float abyss = minY-vertExtent;

@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 			anim.SetBool("Ground",false);
 			rigidbody2D.AddForce(new Vector2(0,jumpForce));
 			
-			//			if(!_doubleJump && !_grounded){
+//						if(!_doubleJump && !_grounded){
 			//				_doubleJump = true;
 			//			}
 		}
