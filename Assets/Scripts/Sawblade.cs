@@ -15,9 +15,9 @@ public class Sawblade : MonoBehaviour {
 		transform.Rotate (Vector3.forward*speed*Time.deltaTime,Space.World);
 	}
 
-	void OnTriggerEnter2D(Collider2D c){
-		if(c.tag =="Player"){
-			Debug.Log("DIE!");
+	void OnTriggerEnter2D(Collider2D other){
+		if(other.tag =="Player"){
+			Destroy(other.gameObject);
 		}
 	}
 }
