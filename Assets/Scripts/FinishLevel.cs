@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CheckpointScript : MonoBehaviour {
+public class FinishLevel : MonoBehaviour {
 	private GameManager _manager;
 
 	// Use this for initialization
@@ -10,9 +10,8 @@ public class CheckpointScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if(other.CompareTag("Player")){
-			_manager.SetCheckpoint(transform.position);
-			collider2D.enabled = false;
+		if(other.tag == "Player"){
+			_manager.EndLevel();
 		}
 	}
 }

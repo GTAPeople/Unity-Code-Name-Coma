@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	private CameraFollow _cam;
 	private float _distance; //Distance between DeadStart and Spawn;
 
+	public static int _levelCount = 0;
+	public static int _currentLevel = 0;
+
 	// Use this for initialization
 	void Start () {
 		_cam = GetComponent<CameraFollow>();
@@ -37,14 +40,15 @@ public class GameManager : MonoBehaviour {
 	public void SetCheckpoint(Vector3 cp){
 		_checkpoint = cp;
 	}
-	// Test for load level
+
+	// For load level
 	public void EndLevel(){
-//		if(_currentLevel < _levelCount){
-//			_currentLevel++;
-//			Application.LoadLevel("Level" + _currentLevel);
-//		}
-//		else{
-//			Debug.Log("Game Over");
-//		}
+		if(_currentLevel < _levelCount){
+			_currentLevel++;
+			Application.LoadLevel("Level" + _currentLevel);
+		}
+		else{
+			Debug.Log("Game Over");
+		}
 	}
 }

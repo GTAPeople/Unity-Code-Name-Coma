@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\BoxGizmos.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CheckpointScript.cs" />
+     <Compile Include="Assets\Scripts\FinishLevel.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\MoveObject2Next1Point.cs" />
      <Compile Include="Assets\Scripts\MoveObject2Next2Points.cs" />
