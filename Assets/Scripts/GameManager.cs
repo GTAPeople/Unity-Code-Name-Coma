@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour {
 		_cam = GetComponent<CameraFollow>();
 		if(GameObject.FindGameObjectWithTag("Respawn")){
 			_checkpoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+
 			_distance = Mathf.Abs(_cam.deadStart.transform.position.x - _checkpoint.x);
-		}
-		
+		}		
 		SpawnPlayer (_checkpoint);
 	}
 	
@@ -24,7 +24,9 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		if(!_currentPlayer){
 			SpawnPlayer(_checkpoint);
-			_cam.deadStart.transform.position = new Vector3(_checkpoint.x -_distance, _cam.deadStart.transform.position.y,_cam.deadStart.transform.position.z);
+			if(_cam.deadStart.transform.position.x > _checkpoint.x){
+				_cam.deadStart.transform.position = new Vector3(_checkpoint.x -_distance, _cam.deadStart.transform.position.y,_cam.deadStart.transform.position.z);
+			}
 		}
 	}
 

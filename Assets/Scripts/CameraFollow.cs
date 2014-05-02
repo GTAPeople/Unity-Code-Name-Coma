@@ -45,14 +45,15 @@ public class CameraFollow : MonoBehaviour {
 	// This function is called every fixed framerate frame
 	void FixedUpdate ()
 	{
-		player = GameObject.FindGameObjectWithTag("Player").transform;
-		if(player.gameObject){
-
-			TrackPlayer();
+		if(GameObject.FindGameObjectWithTag("Player")){
+			player = GameObject.FindGameObjectWithTag("Player").transform;
 		}
-		float abyss = minY-vertExtent;
-		if(player.position.y < abyss){
-			Destroy(player.gameObject);
+		if(player!=null){		
+			TrackPlayer();
+			float abyss = minY-vertExtent;
+			if(player.position.y < abyss){
+				Destroy(player.gameObject);
+			}
 		}
 	}
 
