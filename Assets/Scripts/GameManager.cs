@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	private CameraFollow _cam;
 	private float _distance; //Distance between DeadStart and Spawn;
 
-	public static int _levelCount = 0;
+	public static int _levelCount = 2;
 	public static int _currentLevel = 0;
 
 	// Use this for initialization
