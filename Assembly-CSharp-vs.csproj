@@ -51,10 +51,8 @@
      <Compile Include="Assets\Scripts\CheckpointScript.cs" />
      <Compile Include="Assets\Scripts\FinishLevel.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\MoveObject2Next1Point.cs" />
-     <Compile Include="Assets\Scripts\MoveObject2Next2Points.cs" />
-     <Compile Include="Assets\Scripts\MoveObject2Next3Points.cs" />
-     <Compile Include="Assets\Scripts\MoveObjectInCircle.cs" />
+     <Compile Include="Assets\Scripts\MoveObject2D.cs" />
+     <Compile Include="Assets\Scripts\MoveObject2DCircle.cs" />
      <Compile Include="Assets\Scripts\Pauser.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Sawblade.cs" />

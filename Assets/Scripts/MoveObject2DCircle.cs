@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MoveObjectInCircle : MonoBehaviour {
+public class MoveObject2DCircle : MonoBehaviour {
 	public float speed = 3.0f;
 	public float radius = 1.0f;
 	public float speedTimeDelay = 0.0f;
