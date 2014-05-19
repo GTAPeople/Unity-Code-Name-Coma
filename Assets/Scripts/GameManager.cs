@@ -3,11 +3,12 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject _player;
+	public GameObject _teleport;
 	private GameObject _currentPlayer;
 	private Vector3 _checkpoint;
 	private CameraFollow _cam;
 	private float _distance; //Distance between DeadStart and Spawn;
+	private GameObject _currentTeleport;
 
 	public static int _levelCount = 2;
 	public static int _currentLevel = 0;
@@ -16,8 +17,8 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		_cam = GetComponent<CameraFollow>();
 		if(GameObject.FindGameObjectWithTag("Respawn")){
-			_checkpoint = GameObject.FindGameObjectWithTag("Respawn").transform.position;
-
+			GameObject _respawn = GameObject.FindGameObjectWithTag("Respawn");
+			_checkpoint = new Vector3(_respawn.transform.position.x,_respawn.transform.position.y-_respawn.GetComponent<BoxCollider2D>().size.y/2,_respawn.transform.position.z);
 			_distance = Mathf.Abs(_cam.deadStart.transform.position.x - _checkpoint.x);
 		}		
 		SpawnPlayer (_checkpoint);
@@ -34,7 +35,12 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void SpawnPlayer(Vector3 spawnPos){
-		_currentPlayer = Instantiate (_player, spawnPos, Quaternion.identity) as GameObject;
+		if(!_currentTeleport){
+			_currentTeleport = Instantiate (_teleport, spawnPos, Quaternion.identity) as GameObject;
+		}
+		if(GameObject.FindGameObjectWithTag("Player")){
+			_currentPlayer = GameObject.FindGameObjectWithTag("Player");
+		}
 	}
 
 	public void SetCheckpoint(Vector3 cp){
