@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MoveObject2D : MonoBehaviour {
 
-	[SerializeField]
 	public GameObject[] _next;
 	public float speed = 3.0f;
 	public float timeDelay = 0.2f;
