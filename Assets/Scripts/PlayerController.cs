@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
-	[HideInInspector]
-	public bool facingRight = true;			// For determining which way the player is currently facing.
-
-	public float moveForce = 365f;			// Amount of force added to move the player left and right.
-	public float maxSpeed = 10f;				// The fastest the player can travel in the x axis.
+	public float speed = 10f;				// The fastest the player can travel in the x axis.
 	public float jumpForce = 450f;			// Amount of force added when the player jumps.
 	public Transform groundCheck;			// A position marking where to check if the player is grounded.
 
+	//Platform Set
+	private Transform currentPlatform = null;
+	private Vector3 lastPlatformPosition = Vector3.zero;
+	private Vector3 currentPlatformDelta = Vector3.zero;
+
 //	bool _doubleJump = false;
 
+	private bool facingRight = true;			// For determining which way the player is currently facing.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;
 
@@ -38,6 +41,51 @@ public class PlayerController : MonoBehaviour {
 			//				_doubleJump = true;
 			//			}
 		}
+
+		//Moving platform logic
+		//Check what platform we are on
+		List<Transform> platforms = new List<Transform>();
+		bool onSamePlatform = false;
+//		foreach(Transform groundCheck in groundChecks)
+//		{
+			RaycastHit2D hit = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+			if(hit.transform != null)
+			{
+				platforms.Add(hit.transform);
+				if(currentPlatform == hit.transform)
+				{
+					onSamePlatform = true;
+				}
+			}
+
+//		}
+		
+		if(!onSamePlatform)
+		{
+			foreach(Transform platform in platforms)
+			{
+				currentPlatform = platform;
+				lastPlatformPosition = currentPlatform.position;
+
+			}
+		}
+		
+		if(currentPlatform != null)
+		{
+			//Determine how far platform has moved
+			currentPlatformDelta = currentPlatform.position - lastPlatformPosition;
+			
+			lastPlatformPosition = currentPlatform.position;
+		}
+	}
+
+	void LateUpdate()
+	{
+		if(currentPlatform != null&&grounded)
+		{
+			//Move with the platform
+			transform.position += currentPlatformDelta;
+		}
 	}
 
 	void FixedUpdate () {
@@ -53,14 +101,15 @@ public class PlayerController : MonoBehaviour {
 //		}
 		if(!grounded){
 			anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);
+		}else{
+			anim.SetFloat ("vSpeed", 0);
 		}
 
 //		if (!_grounded){
 //			return;
 //		}
 
-
-		rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y);
+		rigidbody2D.velocity = new Vector2 (move * speed, rigidbody2D.velocity.y);
 
 		// If the input is moving the player right and the player is facing left...
 		if(move > 0 && !facingRight){
@@ -83,4 +132,5 @@ public class PlayerController : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+	
 }
