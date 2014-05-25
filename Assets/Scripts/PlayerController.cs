@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 
 		//		if((_grounded || !_doubleJump) && Input.GetKeyDown(KeyCode.Space)){
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetKeyDown(KeyCode.Space) && grounded){
+		if(Input.GetKeyDown(KeyCode.UpArrow)||(Input.GetKeyDown(KeyCode.W)) && grounded){
 			anim.SetBool("Ground",false);
 			rigidbody2D.AddForce(new Vector2(0,jumpForce));
 			

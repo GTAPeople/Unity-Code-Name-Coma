@@ -4,7 +4,7 @@ using System.Collections;
 public class MoveObject2D : MonoBehaviour {
 
 	public GameObject[] _next;
-	public float speed = 3.0f;
+	public float slowSpeed = 3.0f;
 	public float timeDelay = 0.2f;
 
 	private Vector3 posOrigin;
@@ -16,12 +16,12 @@ public class MoveObject2D : MonoBehaviour {
 		if (_next != null && _next.Length > 0){
 			while(true){
 				for(int i=0; i < _next.Length; i++){
-					yield return StartCoroutine(movePos(transform, (i==0)? posOrigin:_next[i-1].transform.position , _next[i].transform.position, speed));
+					yield return StartCoroutine(movePos(transform, (i==0)? posOrigin:_next[i-1].transform.position , _next[i].transform.position, slowSpeed));
 					lastPos = _next[i].transform.position;
 				}
 				if(posOrigin!=lastPos){
 					for(int i=_next.Length-1; i >= 0; i--){
-						yield return StartCoroutine(movePos(transform, _next[i].transform.position, (i==0)? posOrigin:_next[i-1].transform.position, speed));
+						yield return StartCoroutine(movePos(transform, _next[i].transform.position, (i==0)? posOrigin:_next[i-1].transform.position, slowSpeed));
 					}
 				}
 			}
