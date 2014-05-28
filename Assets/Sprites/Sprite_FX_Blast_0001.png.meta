@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc81453848aa6e544b9f74b5bf63c60f
+guid: 1fcc8d220e310fb409d9cef23fd859a5
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -20,7 +20,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
@@ -35,14 +35,11 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
-    maxTextureSize: 1024
-    textureFormat: -2
-    compressionQuality: 50
+  buildTargetSettings: []
   spriteSheet:
     sprites:
     - name: Sprite_FX_Blast_0001_0
@@ -53,7 +50,8 @@ TextureImporter:
         width: 106
         height: 37
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0001_1
       rect:
         serializedVersion: 2
@@ -62,7 +60,8 @@ TextureImporter:
         width: 119
         height: 133
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0001_2
       rect:
         serializedVersion: 2
@@ -71,7 +70,8 @@ TextureImporter:
         width: 147
         height: 179
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0001_3
       rect:
         serializedVersion: 2
@@ -81,6 +81,7 @@ TextureImporter:
         height: 212
       alignment: 7
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0001_4
       rect:
         serializedVersion: 2
@@ -90,6 +91,7 @@ TextureImporter:
         height: 232
       alignment: 7
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0001_5
       rect:
         serializedVersion: 2
@@ -99,6 +101,7 @@ TextureImporter:
         height: 322
       alignment: 7
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0001_6
       rect:
         serializedVersion: 2
@@ -108,6 +111,7 @@ TextureImporter:
         height: 308
       alignment: 7
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0001_7
       rect:
         serializedVersion: 2
@@ -117,6 +121,7 @@ TextureImporter:
         height: 308
       alignment: 7
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0001_8
       rect:
         serializedVersion: 2
@@ -125,6 +130,7 @@ TextureImporter:
         width: 26
         height: 250
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

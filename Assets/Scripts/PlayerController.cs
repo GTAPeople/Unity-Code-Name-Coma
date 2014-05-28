@@ -33,9 +33,9 @@ public class PlayerController : MonoBehaviour {
 
 		//		if((_grounded || !_doubleJump) && Input.GetKeyDown(KeyCode.Space)){
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetKeyDown(KeyCode.UpArrow)||(Input.GetKeyDown(KeyCode.W)) && grounded){
-			anim.SetBool("Ground",false);
+		if((Input.GetKeyDown(KeyCode.UpArrow)||Input.GetKeyDown(KeyCode.W)) && grounded){
 			rigidbody2D.AddForce(new Vector2(0,jumpForce));
+//			anim.SetBool("Ground",false);
 			
 //						if(!_doubleJump && !_grounded){
 			//				_doubleJump = true;
@@ -104,7 +104,8 @@ public class PlayerController : MonoBehaviour {
 		}else{
 			anim.SetFloat ("vSpeed", 0);
 		}
-
+//		Debug.Log ((jumpForce/rigidbody2D.mass)*Time.fixedDeltaTime);
+//		Debug.Log (rigidbody2D.velocity.y);
 //		if (!_grounded){
 //			return;
 //		}

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Text.RegularExpressions;
 
 public class GameManager : MonoBehaviour {
 
@@ -14,8 +15,8 @@ public class GameManager : MonoBehaviour {
 	private GameObject _currentScreen;
 	private bool handle = true;
 
-	public static int _levelCount = 2;
-	public static int _currentLevel = 0;
+	private int _levelCount = 2;
+	private int _currentLevel;
 
 	// Use this for initialization
 	void Awake () {
@@ -72,12 +73,16 @@ public class GameManager : MonoBehaviour {
 
 	// For load level
 	public void EndLevel(){
+		int _newLevel = 0;
+		// http://msdn.microsoft.com/en-us/library/az24scfc%28v=vs.110%29.aspx for Regular Expression
+		_currentLevel = int.Parse(Regex.Match(Application.loadedLevelName,@"\d+").Value);
 		if(_currentLevel < _levelCount){
-			_currentLevel++;
-			Application.LoadLevel("Level" + _currentLevel);
+			_newLevel = _currentLevel+1;
+			Application.LoadLevel("Level" + _newLevel);
 		}
-		else{
+		if(_currentLevel==_levelCount){
 			Debug.Log("Game Over");
+			Application.LoadLevel("Level" + _newLevel);
 		}
 	}
 }
