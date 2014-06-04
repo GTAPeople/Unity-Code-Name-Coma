@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour {
 	// For load level
 	public void EndLevel(){
 		int _newLevel = 0;
-		// http://msdn.microsoft.com/en-us/library/az24scfc%28v=vs.110%29.aspx for Regular Expression
+		// http://msdn.microsoft.com/en-us/library/az24scfc%28v=vs.110%29.aspx for Regular Expression example
 		_currentLevel = int.Parse(Regex.Match(Application.loadedLevelName,@"\d+").Value);
 		if(_currentLevel < _levelCount){
 			_newLevel = _currentLevel+1;
