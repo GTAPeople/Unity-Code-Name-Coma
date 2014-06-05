@@ -72,7 +72,7 @@ public class CameraFollow : MonoBehaviour {
 				// ... the target x coordinate should be a Lerp between the camera's current x position and the player's current x position.
 				targetX = Mathf.Lerp(transform.position.x, player.position.x, xSmooth * Time.deltaTime);
 			}
-			// To make the camera move left when there no player in the screen
+			// To make the camera move left when there is deadStart in the screen or the deadStart is in the left of the screen
 			if((targetDeadStartX + deadStart.GetComponent<BoxCollider2D>().size.x) <= (transform.position.x - horzExtent)){
 				targetX = Mathf.Lerp(transform.position.x, player.position.x, xSmooth * Time.deltaTime);
 			}
@@ -100,5 +100,10 @@ public class CameraFollow : MonoBehaviour {
 		
 		// Set the camera's position to the target position with the same z component.
 		transform.position = new Vector3(targetX, targetY, transform.position.z);
+	}
+
+	// Move the camera to the last checkpoint by deadStart after player die and during Death Scene
+	public void moveToLastCheckpoint(){
+		transform.position = new Vector3(deadStart.transform.position.x + ((deadStart.GetComponent<BoxCollider2D>().size.x)/2) + horzExtent, transform.position.y, transform.position.z);
 	}
 }

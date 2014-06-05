@@ -11,11 +11,13 @@ public class ScrollingBackground : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		float minY = Mathf.Abs(Camera.main.GetComponent<CameraFollow>().minY);
+		float maxY = Mathf.Abs(Camera.main.GetComponent<CameraFollow>().maxY);
 		vertExtent = Camera.main.camera.orthographicSize*2;  
 		horzExtent = vertExtent * Camera.main.pixelWidth / Camera.main.pixelHeight;
-		transform.localScale = new Vector3 (horzExtent, vertExtent, 1);
-		secondQuad.transform.localScale = new Vector3 (horzExtent, vertExtent, 1);
-		thirdQuad.transform.localScale = new Vector3 (horzExtent, vertExtent, 1);
+		transform.localScale = new Vector3 (horzExtent, vertExtent + minY + maxY, 1);
+		secondQuad.transform.localScale = new Vector3 (horzExtent, vertExtent + minY + maxY, 1);
+		thirdQuad.transform.localScale = new Vector3 (horzExtent, vertExtent + minY + maxY, 1);
 		secondQuad.transform.position = new Vector3 (transform.position.x+horzExtent,secondQuad.transform.position.y,secondQuad.transform.position.z);
 		thirdQuad.transform.position = new Vector3 (secondQuad.transform.position.x+horzExtent,thirdQuad.transform.position.y,thirdQuad.transform.position.z);
 	}

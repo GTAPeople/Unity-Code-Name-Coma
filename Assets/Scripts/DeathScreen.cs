@@ -3,6 +3,12 @@ using System.Collections;
 
 public class DeathScreen : MonoBehaviour {
 	public float duration = 1.0f;
+	private GameManager _game;
+
+	// Awake is used to initialize any variables or game state before the game starts
+	void Awake () {
+		_game = Camera.main.GetComponent<GameManager>();
+	}
 
 	// Use this for initialization
 	IEnumerator Start () {
@@ -11,7 +17,7 @@ public class DeathScreen : MonoBehaviour {
 		GetComponent<GUITexture> ().color = new Color(0,0,0,0.0f);
 
 		yield return StartCoroutine(Fade(0.0f, 1.0f, duration));
-
+		_game.TryCameraToFindLastCheckpoint();
 		yield return StartCoroutine(Fade(1.0f, 0.0f, duration));
 	}
 
@@ -46,4 +52,7 @@ public class DeathScreen : MonoBehaviour {
 //		}
 		
 	} //end Fade
+
+
+
 }

@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 	private int _levelCount = 2;
 	private int _currentLevel;
 
-	// Use this for initialization
+	// Awake is used to initialize any variables or game state before the game starts
 	void Awake () {
 		_cam = GetComponent<CameraFollow>();
 		if(GameObject.FindGameObjectWithTag("Respawn")){
@@ -49,9 +49,7 @@ public class GameManager : MonoBehaviour {
 					SpawnPlayer(_checkpoint);
 					handle=true;
 				}
-				if(_cam.deadStart.transform.position.x > _checkpoint.x){
-					_cam.deadStart.transform.position = new Vector3(_checkpoint.x -_distance, _cam.deadStart.transform.position.y,_cam.deadStart.transform.position.z);
-				}
+				_cam.deadStart.transform.position = new Vector3(_checkpoint.x -_distance, _cam.deadStart.transform.position.y,_cam.deadStart.transform.position.z);
 			}
 		}
 	}
@@ -69,6 +67,11 @@ public class GameManager : MonoBehaviour {
 
 	public void SetCheckpoint(Vector3 cp){
 		_checkpoint = cp;
+	}
+
+	// A public method for DeathScreen only
+	public void TryCameraToFindLastCheckpoint(){
+		_cam.moveToLastCheckpoint ();
 	}
 
 	// For load level
