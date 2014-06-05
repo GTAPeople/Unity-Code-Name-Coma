@@ -3,16 +3,24 @@ using System.Collections;
 
 public class ScrollingBackground : MonoBehaviour {
 	public float speed = 0.4f;
+	public Texture[] texture;
+
 	private float vertExtent;		// The size of vertical of the screen.
 	private float horzExtent;		// The size of horizontal of the screen.
 	public GameObject secondQuad;
 	public GameObject thirdQuad;
 	private GameObject _currentPlayer;
+	private GameManager _manager;
+	private Texture originTexture ;
 
 	// Use this for initialization
 	void Start () {
+		_manager = Camera.main.GetComponent<GameManager> ();
+		originTexture = renderer.material.mainTexture;
+
 		float minY = Mathf.Abs(Camera.main.GetComponent<CameraFollow>().minY);
 		float maxY = Mathf.Abs(Camera.main.GetComponent<CameraFollow>().maxY);
+
 		vertExtent = Camera.main.camera.orthographicSize*2;  
 		horzExtent = vertExtent * Camera.main.pixelWidth / Camera.main.pixelHeight;
 		transform.localScale = new Vector3 (horzExtent, vertExtent + minY + maxY, 1);
@@ -48,6 +56,19 @@ public class ScrollingBackground : MonoBehaviour {
 				Debug.Log("Got third");
 				thirdQuad.transform.position= new Vector3(secondQuad.transform.position.x + horzExtent ,transform.position.y, transform.position.z);
 			}
+		}
+
+		if(_manager.GetCountCheckpoint()>0){
+			if(texture.Length >= _manager.GetCountCheckpoint()){
+				int i = _manager.GetCountCheckpoint() - 1;
+				renderer.material.mainTexture = texture[i];
+				secondQuad.renderer.material.mainTexture = texture[i];
+				thirdQuad.renderer.material.mainTexture = texture[i];
+			}
+		}else{
+			renderer.material.mainTexture = originTexture;
+			secondQuad.renderer.material.mainTexture = originTexture;
+			thirdQuad.renderer.material.mainTexture = originTexture;
 		}
 	}
 }

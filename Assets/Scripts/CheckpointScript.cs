@@ -13,6 +13,7 @@ public class CheckpointScript : MonoBehaviour {
 		if(other.CompareTag("Player")){
 			_manager.SetCheckpoint(new Vector3(transform.position.x, transform.position.y-GetComponent<BoxCollider2D>().size.y/2,transform.position.z));
 			collider2D.enabled = false;
+			_manager.CountCheckpoint();
 		}
 	}
 }

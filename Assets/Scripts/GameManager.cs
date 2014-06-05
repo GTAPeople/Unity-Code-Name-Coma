@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour {
 
 	private int _levelCount = 2;
 	private int _currentLevel;
+	private int _countCheck = 0;
 
 	// Awake is used to initialize any variables or game state before the game starts
 	void Awake () {
@@ -65,11 +66,22 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	// A public method for Checkpoint script only
 	public void SetCheckpoint(Vector3 cp){
 		_checkpoint = cp;
 	}
 
-	// A public method for DeathScreen only
+	// A public method for Checkpoint script only
+	public void CountCheckpoint(){
+		_countCheck ++;
+	}
+
+	// A public method for ScrollingBackground script only
+	public int GetCountCheckpoint(){
+		return _countCheck;
+	}
+
+	// A public method for DeathScreen script only
 	public void TryCameraToFindLastCheckpoint(){
 		_cam.moveToLastCheckpoint ();
 	}
