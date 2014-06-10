@@ -21,11 +21,15 @@ public class ScrollingBackground : MonoBehaviour {
 		float minY = Mathf.Abs(Camera.main.GetComponent<CameraFollow>().minY);
 		float maxY = Mathf.Abs(Camera.main.GetComponent<CameraFollow>().maxY);
 
+		// LocalScale
 		vertExtent = Camera.main.camera.orthographicSize*2;  
 		horzExtent = vertExtent * Camera.main.pixelWidth / Camera.main.pixelHeight;
 		transform.localScale = new Vector3 (horzExtent, vertExtent + minY + maxY, 1);
 		secondQuad.transform.localScale = new Vector3 (horzExtent, vertExtent + minY + maxY, 1);
 		thirdQuad.transform.localScale = new Vector3 (horzExtent, vertExtent + minY + maxY, 1);
+
+		// Position
+		transform.position = new Vector3(_manager.GetCheckpoint().x, transform.position.y, transform.position.z);
 		secondQuad.transform.position = new Vector3 (transform.position.x+horzExtent,secondQuad.transform.position.y,secondQuad.transform.position.z);
 		thirdQuad.transform.position = new Vector3 (secondQuad.transform.position.x+horzExtent,thirdQuad.transform.position.y,thirdQuad.transform.position.z);
 	}
@@ -45,15 +49,15 @@ public class ScrollingBackground : MonoBehaviour {
 		thirdQuad.transform.Translate (Vector3.left*move,Space.World);
 		if(_currentPlayer){
 			if(_currentPlayer.transform.position.x > (transform.position.x+(horzExtent*1.5))){
-				Debug.Log("Got first");
+//				Debug.Log("Got first");
 				transform.position= new Vector3(thirdQuad.transform.position.x + horzExtent ,transform.position.y, transform.position.z);
 			}
 			if(_currentPlayer.transform.position.x > (secondQuad.transform.position.x+(horzExtent*1.5))){
-				Debug.Log("Got second");
+//				Debug.Log("Got second");
 				secondQuad.transform.position= new Vector3(transform.position.x + horzExtent ,transform.position.y, transform.position.z);
 			}
 			if(_currentPlayer.transform.position.x > (thirdQuad.transform.position.x+(horzExtent*1.5))){
-				Debug.Log("Got third");
+//				Debug.Log("Got third");
 				thirdQuad.transform.position= new Vector3(secondQuad.transform.position.x + horzExtent ,transform.position.y, transform.position.z);
 			}
 		}
@@ -71,4 +75,11 @@ public class ScrollingBackground : MonoBehaviour {
 			thirdQuad.renderer.material.mainTexture = originTexture;
 		}
 	}
+
+	public void moveBackgroundToLastCheckpoint(){
+		transform.position = new Vector3(_manager.GetCheckpoint().x, transform.position.y, transform.position.z);
+		secondQuad.transform.position = new Vector3 (transform.position.x+horzExtent,secondQuad.transform.position.y,secondQuad.transform.position.z);
+		thirdQuad.transform.position = new Vector3 (secondQuad.transform.position.x+horzExtent,thirdQuad.transform.position.y,thirdQuad.transform.position.z);
+	}
+
 }

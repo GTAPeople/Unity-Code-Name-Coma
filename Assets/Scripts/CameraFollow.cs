@@ -102,7 +102,7 @@ public class CameraFollow : MonoBehaviour {
 		transform.position = new Vector3(targetX, targetY, transform.position.z);
 	}
 
-	// Move the camera to the last checkpoint by deadStart after player die and during Death Scene
+	// A public method for GameManager script only. Move the camera to the last checkpoint by deadStart after player die and during Death Scene
 	public void moveToLastCheckpoint(){
 		transform.position = new Vector3(deadStart.transform.position.x + ((deadStart.GetComponent<BoxCollider2D>().size.x)/2) + horzExtent, transform.position.y, transform.position.z);
 	}

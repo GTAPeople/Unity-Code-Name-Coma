@@ -86,6 +86,11 @@ public class GameManager : MonoBehaviour {
 		_cam.moveToLastCheckpoint ();
 	}
 
+	// A public method for ScrollBackground script only
+	public Vector3 GetCheckpoint(){
+		return _checkpoint;
+	}
+
 	// For load level
 	public void EndLevel(){
 		int _newLevel = 0;
