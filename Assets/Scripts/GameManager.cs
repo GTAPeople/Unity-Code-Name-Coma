@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Text.RegularExpressions;
 
 public class GameManager : MonoBehaviour {
 
@@ -14,9 +13,7 @@ public class GameManager : MonoBehaviour {
 	private GameObject _currentTeleport;
 	private GameObject _currentScreen;
 	private bool handle = true;
-
-	private int _levelCount = 2;
-	private int _currentLevel;
+	private bool checkBG = false;
 	private int _countCheck = 0;
 
 	// Awake is used to initialize any variables or game state before the game starts
@@ -76,7 +73,7 @@ public class GameManager : MonoBehaviour {
 		_countCheck ++;
 	}
 
-	// A public method for ScrollingBackground script only
+	// A public method for ParallaxBackgroundSky script only
 	public int GetCountCheckpoint(){
 		return _countCheck;
 	}
@@ -86,23 +83,18 @@ public class GameManager : MonoBehaviour {
 		_cam.moveToLastCheckpoint ();
 	}
 
-	// A public method for ScrollBackground script only
+	// A public method for ParallaxScrollingBG script only
 	public Vector3 GetCheckpoint(){
 		return _checkpoint;
 	}
 
-	// For load level
-	public void EndLevel(){
-		int _newLevel = 0;
-		// http://msdn.microsoft.com/en-us/library/az24scfc%28v=vs.110%29.aspx for Regular Expression example
-		_currentLevel = int.Parse(Regex.Match(Application.loadedLevelName,@"\d+").Value);
-		if(_currentLevel < _levelCount){
-			_newLevel = _currentLevel+1;
-			Application.LoadLevel("Level" + _newLevel);
-		}
-		if(_currentLevel==_levelCount){
-			Debug.Log("Game Over");
-			Application.LoadLevel("Level" + _newLevel);
-		}
+	// A public method for ParallaxScrollingBG and DeathScreen script only
+	public void SetCheckBG(bool _check){
+		checkBG = _check;
+	}
+
+	// A public method for ParallaxScrollingBG script only
+	public bool GetCheckBG(){
+		return checkBG;
 	}
 }

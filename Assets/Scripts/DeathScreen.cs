@@ -4,12 +4,10 @@ using System.Collections;
 public class DeathScreen : MonoBehaviour {
 	public float duration = 1.0f;
 	private GameManager _game;
-//	private ScrollingBackground _scroll;
 
 	// Awake is used to initialize any variables or game state before the game starts
 	void Awake () {
 		_game = Camera.main.GetComponent<GameManager>();
-//		_scroll = GameObject.Find ("QuadTest1").GetComponent<ScrollingBackground>();
 	}
 
 	// Use this for initialization
@@ -20,7 +18,7 @@ public class DeathScreen : MonoBehaviour {
 
 		yield return StartCoroutine(Fade(0.0f, 1.0f, duration));
 		_game.TryCameraToFindLastCheckpoint();
-//		_scroll.moveBackgroundToLastCheckpoint ();
+		_game.SetCheckBG (true);
 		yield return StartCoroutine(Fade(1.0f, 0.0f, duration));
 	}
 

@@ -10,7 +10,6 @@ public class ParallaxBackgroundsSky : MonoBehaviour {
 	private float vertExtent;		// The size of vertical of the screen.
 //	private float horzExtent;		// The size of horizontal of the screen.
 
-
 	// Use this for initialization
 	void Start () {
 		_manager = Camera.main.GetComponent<GameManager> ();
