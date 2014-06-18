@@ -49,6 +49,13 @@
      <Compile Include="Assets\mShadowRayScan\PlayerBall.js" />
      <Compile Include="Assets\mShadowRayScan\ShadowRayCast2d.js" />
      <Compile Include="Assets\mShadowRayScan\ShadowRayScan2.js" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{5F531792-680B-3642-BDF4-2DEB01E5B23F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{2619A9C4-2894-9609-3061-12B6B90E3B77}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

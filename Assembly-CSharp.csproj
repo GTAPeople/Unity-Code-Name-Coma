@@ -48,25 +48,40 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoxGizmos.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CheckPoint1.cs" />
      <Compile Include="Assets\Scripts\CheckpointScript.cs" />
+     <Compile Include="Assets\Scripts\Continue.cs" />
      <Compile Include="Assets\Scripts\DeathScreen.cs" />
      <Compile Include="Assets\Scripts\DestroyObject.cs" />
      <Compile Include="Assets\Scripts\DestroyPlayer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GotoCheckPoint1.cs" />
+     <Compile Include="Assets\Scripts\Iniciar.cs" />
+     <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\MoveObject2D.cs" />
      <Compile Include="Assets\Scripts\MoveObject2DCircle.cs" />
      <Compile Include="Assets\Scripts\ParallaxBackgroundsSky.cs" />
      <Compile Include="Assets\Scripts\ParallaxScrollingBG.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Pauser.cs" />
      <Compile Include="Assets\Scripts\PlayerBall2.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\RayCast2d.cs" />
+     <Compile Include="Assets\Scripts\Reinicio.cs" />
      <Compile Include="Assets\Scripts\Sawblade.cs" />
+     <Compile Include="Assets\Scripts\SpawnPlayer.cs" />
      <Compile Include="Assets\Scripts\Teleport.cs" />
      <Compile Include="Assets\mShadowRayScan\CrearPoligono.cs" />
      <Compile Include="Assets\mShadowRayScan\LineRenderer2.cs" />
      <Compile Include="Assets\mShadowRayScan\MovimientoPersonaje.cs" />
      <Compile Include="Assets\mShadowRayScan\ShadowRayCast.cs" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{5F531792-680B-3642-BDF4-2DEB01E5B23F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
+      <Project>{2619A9C4-2894-9609-3061-12B6B90E3B77}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
