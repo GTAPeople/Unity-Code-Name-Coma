@@ -7,7 +7,7 @@ public class PlayerBall2 : MonoBehaviour {
 
 	private float directionX = 0.1f;
 	private float directionY = -0.1f;
-	private float radio = 3.0f;
+	private float radio = 1.0f;
 
 
 	private float Xtemp = 0;
@@ -89,7 +89,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(hitDown.point != new Vector2(0,0))
 			{
-				//Debug.Log("1");
+				Debug.Log("1");
 
 				if(Vector2.Distance(hitDown.point,new Vector2(transform.position.x, transform.position.y)) < radio)
 				{
@@ -105,7 +105,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(hitRight.point != new Vector2(0,0))
 			{
-				//Debug.Log("2");
+				Debug.Log("2");
 
 
 				if(Vector2.Distance(hitRight.point,new Vector2(transform.position.x, transform.position.y)) < radio)
@@ -141,7 +141,7 @@ public class PlayerBall2 : MonoBehaviour {
 						}
 					}
 
-					Debug.Log(angle * 180 / Mathf.PI);
+					//Debug.Log(angle * 180 / Mathf.PI);
 					//angle = -90 * Mathf.PI /180;
 					rotar = true; 
 					directionAngulo = -1;
@@ -151,7 +151,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(hitUp.point != new Vector2(0,0))
 			{
-				//Debug.Log("3");
+				Debug.Log("3");
 
 				if(Vector2.Distance(hitUp.point,new Vector2(transform.position.x, transform.position.y)) < radio)
 				{
@@ -208,7 +208,7 @@ public class PlayerBall2 : MonoBehaviour {
 								}
 							}
 							angle = (finAngulo - inicioAngulo);
-							Debug.Log(angle * 180 / Mathf.PI);
+							//Debug.Log(angle * 180 / Mathf.PI);
 							rotar = true; 
 							directionAngulo = -1;
 						}
@@ -218,7 +218,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(hitLeft.point != new Vector2(0,0))
 			{
-				//Debug.Log("4");
+				Debug.Log("4");
 
 				if(Vector2.Distance(hitLeft.point,new Vector2(transform.position.x, transform.position.y)) < radio)
 				{
@@ -228,6 +228,8 @@ public class PlayerBall2 : MonoBehaviour {
 
 				if(downCollition)
 				{
+					Debug.Log("4.1");
+
 					directionX = -directionX;
 
 						if(rotar == false)
@@ -264,7 +266,7 @@ public class PlayerBall2 : MonoBehaviour {
 									if (hitUptmp.point == new Vector2(0,0))
 									{
 										Debug.DrawLine(transform.position, uptmp, Color.green);
-										finAngulo -= (i + aumento) * Mathf.PI / 180 ;
+										finAngulo -= (i - 2 * aumento) * Mathf.PI / 180 ;
 										break;
 									}
 								}
@@ -278,6 +280,7 @@ public class PlayerBall2 : MonoBehaviour {
 
 				if(upCollition)
 				{
+					Debug.Log("4.2");
 					directionY = -directionY;
 
 						if(rotar == false)
@@ -325,12 +328,63 @@ public class PlayerBall2 : MonoBehaviour {
 							directionAngulo = -1;
 						}
 				}
+
+				if(rightCollition)
+				{
+					directionY = -directionY;
+					directionX = -directionX;
+
+					if(rotar == false)
+					{
+						int aumento = 10;
+						float radioMayor = 3 * radio;
+						float anguloGiro = 270;
+						angle = 0.0f;
+						
+						float inicioAngulo = 0.0f;
+						float finAngulo = 0.0f;
+						bool inicioFin = true;
+						
+						for (int i = (int)anguloGiro; i < 450; i+= aumento)
+						{
+							float x = Mathf.Sin(i * Mathf.PI / 180);
+							float y = Mathf.Cos(i * Mathf.PI / 180);
+							
+							Vector3 uptmp = new Vector3(transform.position.x + radioMayor * y, transform.position.y + radioMayor * x, transform.position.z);
+							RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("Ground"));
+							//Debug.DrawLine(transform.position, uptmp, Color.green);
+							
+							if(inicioFin)
+							{
+								if (hitUptmp.point != new Vector2(0,0))
+								{
+									Debug.DrawLine(transform.position, uptmp, Color.green);
+									inicioAngulo -= (i) * Mathf.PI / 180 ;
+									inicioFin = false;
+								}
+							}
+							else
+							{
+								if (hitUptmp.point == new Vector2(0,0))
+								{
+									Debug.DrawLine(transform.position, uptmp, Color.green);
+									finAngulo -= (i - 3*aumento) * Mathf.PI / 180 ;
+									break;
+								}
+							}
+						}
+						angle = (finAngulo - inicioAngulo);
+						Debug.Log(angle * 180 / Mathf.PI);
+						rotar = true; 
+						directionAngulo = -1;
+					}
+				}
 			}
 			
 			
 			if(directionY > 0 && directionX > 0 && !upCollition && !downCollition && !leftCollition && !rightCollition)
 			{
-				//Debug.Log("5");
+				Debug.Log("5");
 
 				Xtemp = right.x;
 				Ytemp = up.y;
@@ -339,7 +393,7 @@ public class PlayerBall2 : MonoBehaviour {
 			}
 			else if (directionY < 0 && directionX > 0 && !upCollition && !downCollition && !leftCollition && !rightCollition)
 			{
-				//Debug.Log("6");
+				Debug.Log("6");
 
 				Xtemp = right.x;
 				Ytemp = down.y;
@@ -349,7 +403,7 @@ public class PlayerBall2 : MonoBehaviour {
 			}
 			else if (directionY < 0 && directionX < 0 && !upCollition && !downCollition && !leftCollition && !rightCollition)
 			{
-				//Debug.Log("7");
+				Debug.Log("7");
 
 				Xtemp = left.x;
 				Ytemp = down.y;
@@ -357,7 +411,7 @@ public class PlayerBall2 : MonoBehaviour {
 			}
 			else if (directionY > 0 && directionX < 0 && !upCollition && !downCollition && !leftCollition && !rightCollition)
 			{
-				//Debug.Log("8");
+				Debug.Log("8");
 
 				Xtemp = left.x;
 				Ytemp = up.y;
@@ -433,7 +487,7 @@ public class PlayerBall2 : MonoBehaviour {
 					}
 				}
 				angle = (finAngulo - inicioAngulo);
-				Debug.Log("--> " + angle * 180 / Mathf.PI);
+				//Debug.Log("--> " + angle * 180 / Mathf.PI);
 				rotar = true; 
 				directionAngulo = 1;
 				_rayCast2d.modificarAngulos(directionAngulo, 0.5f * grados);
@@ -442,7 +496,7 @@ public class PlayerBall2 : MonoBehaviour {
 
 		if(desplazamiento == 2 && Xtemp != 0 && Ytemp != 0)
 		{
-			//Debug.Log("10");
+			Debug.Log("10");
 
 			if(Mathf.Abs(transform.position.x - Xtemp) >= 0.1f)
 			{
@@ -512,8 +566,13 @@ public class PlayerBall2 : MonoBehaviour {
 				rotar = true; 
 				directionAngulo = 1;
 				
-				Debug.Log("--> " + angle * 180 / Mathf.PI);
-				_rayCast2d.modificarAngulos(directionAngulo, 0.5f * Mathf.PI/180);
+					//Debug.Log("--> " + angle * 180 / Mathf.PI);
+					_rayCast2d.modificarAngulos(directionAngulo, 0.5f * Mathf.PI/180);
+					_rayCast2d.modificarAngulos(directionAngulo, 0.5f * Mathf.PI/180);
+					_rayCast2d.modificarAngulos(directionAngulo, 0.5f * Mathf.PI/180);
+					_rayCast2d.modificarAngulos(directionAngulo, 0.5f * Mathf.PI/180);
+					_rayCast2d.modificarAngulos(directionAngulo, 0.5f * Mathf.PI/180);
+					_rayCast2d.modificarAngulos(directionAngulo, 0.5f * Mathf.PI/180);
 			}
 			
 			

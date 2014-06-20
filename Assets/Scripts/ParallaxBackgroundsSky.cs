@@ -34,6 +34,8 @@ public class ParallaxBackgroundsSky : MonoBehaviour {
 			if(texture.Length >= _manager.GetCountCheckpoint()){
 				int i = _manager.GetCountCheckpoint() - 1;
 				renderer.material.mainTexture = texture[i];
+			}else{
+				renderer.material.mainTexture = texture[texture.Length];
 			}
 		}else{
 			renderer.material.mainTexture = originTexture;

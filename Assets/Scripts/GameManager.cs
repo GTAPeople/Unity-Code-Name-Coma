@@ -14,16 +14,25 @@ public class GameManager : MonoBehaviour {
 	private GameObject _currentScreen;
 	private bool handle = true;
 	private bool checkBG = false;
-	private int _countCheck = 0;
+	private int _countCheck;
 
 	// Awake is used to initialize any variables or game state before the game starts
 	void Awake () {
+		_countCheck = PlayerPrefs.GetInt("CountCheck",0);
 		_cam = GetComponent<CameraFollow>();
-		if(GameObject.FindGameObjectWithTag("Respawn")){
-			GameObject _respawn = GameObject.FindGameObjectWithTag("Respawn");
-			_checkpoint = new Vector3(_respawn.transform.position.x,_respawn.transform.position.y-_respawn.GetComponent<BoxCollider2D>().size.y/2,_respawn.transform.position.z);
-			_distance = Mathf.Abs(_cam.deadStart.transform.position.x - _checkpoint.x);
-		}		
+		if(PlayerPrefsX.GetVector3("CheckSpawn")==Vector3.zero){
+			if(GameObject.FindGameObjectWithTag("Respawn")){
+				GameObject _respawn = GameObject.FindGameObjectWithTag("Respawn");
+				_checkpoint = new Vector3(_respawn.transform.position.x,_respawn.transform.position.y-_respawn.GetComponent<BoxCollider2D>().size.y/2,_respawn.transform.position.z);
+				_distance = Mathf.Abs(_cam.deadStart.transform.position.x - _checkpoint.x);
+			}	
+		}else{
+			_checkpoint = PlayerPrefsX.GetVector3("CheckSpawn");
+			if(GameObject.FindGameObjectWithTag("Respawn")){
+				GameObject _respawn = GameObject.FindGameObjectWithTag("Respawn");
+				_distance = Mathf.Abs(_cam.deadStart.transform.position.x - _respawn.transform.position.x);
+			}
+		}
 		SpawnPlayer (_checkpoint);
 	}
 
@@ -73,7 +82,7 @@ public class GameManager : MonoBehaviour {
 		_countCheck ++;
 	}
 
-	// A public method for ParallaxBackgroundSky script only
+	// A public method for Checkpoint and ParallaxBackgroundSky script only
 	public int GetCountCheckpoint(){
 		return _countCheck;
 	}

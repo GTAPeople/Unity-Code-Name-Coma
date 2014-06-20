@@ -48,10 +48,13 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoxGizmos.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CameraFollow_.cs" />
      <Compile Include="Assets\Scripts\CheckLevel.cs" />
      <Compile Include="Assets\Scripts\CheckPoint1.cs" />
      <Compile Include="Assets\Scripts\CheckpointScript.cs" />
+     <Compile Include="Assets\Scripts\CollisionDetector.cs" />
      <Compile Include="Assets\Scripts\Continue.cs" />
+     <Compile Include="Assets\Scripts\ControlPlayer.cs" />
      <Compile Include="Assets\Scripts\DeathScreen.cs" />
      <Compile Include="Assets\Scripts\DestroyObject.cs" />
      <Compile Include="Assets\Scripts\DestroyPlayer.cs" />
