@@ -82,10 +82,10 @@ public class PlayerBall2 : MonoBehaviour {
 
 		if(desplazamiento == 0 && Xtemp == 0 && Ytemp == 0)
 		{
-				RaycastHit2D hitUp = Physics2D.Linecast(transform.position, up, 1 << LayerMask.NameToLayer("Ground"));
-				RaycastHit2D hitDown = Physics2D.Linecast(transform.position, down, 1 << LayerMask.NameToLayer("Ground"));
-				RaycastHit2D hitLeft = Physics2D.Linecast(transform.position, left, 1 << LayerMask.NameToLayer("Ground"));
-				RaycastHit2D hitRight = Physics2D.Linecast(transform.position, right, 1 << LayerMask.NameToLayer("Ground"));
+				RaycastHit2D hitUp = Physics2D.Linecast(transform.position, up, 1 << LayerMask.NameToLayer("mapa"));
+				RaycastHit2D hitDown = Physics2D.Linecast(transform.position, down, 1 << LayerMask.NameToLayer("mapa"));
+				RaycastHit2D hitLeft = Physics2D.Linecast(transform.position, left, 1 << LayerMask.NameToLayer("mapa"));
+				RaycastHit2D hitRight = Physics2D.Linecast(transform.position, right, 1 << LayerMask.NameToLayer("mapa"));
 			
 			if(hitDown.point != new Vector2(0,0))
 			{
@@ -131,7 +131,7 @@ public class PlayerBall2 : MonoBehaviour {
 						float y = Mathf.Cos(i * Mathf.PI / 180);
 
 						Vector3 uptmp = new Vector3(transform.position.x + radioMayor * y, transform.position.y + radioMayor * x, transform.position.z);
-							RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("Ground"));
+							RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("mapa"));
 						Debug.DrawLine(transform.position, uptmp, Color.green);
 						
 						if (hitUptmp.point == new Vector2(0,0))
@@ -185,7 +185,7 @@ public class PlayerBall2 : MonoBehaviour {
 								float y = Mathf.Cos(i * Mathf.PI / 180);
 								
 								Vector3 uptmp = new Vector3(transform.position.x + radioMayor * y, transform.position.y + radioMayor * x, transform.position.z);
-								RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("Ground"));
+								RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("mapa"));
 								//Debug.DrawLine(transform.position, uptmp, Color.green);
 								
 								if(inicioFin)
@@ -249,7 +249,7 @@ public class PlayerBall2 : MonoBehaviour {
 								float y = Mathf.Cos(i * Mathf.PI / 180);
 								
 								Vector3 uptmp = new Vector3(transform.position.x + radioMayor * y, transform.position.y + radioMayor * x, transform.position.z);
-								RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("Ground"));
+								RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("mapa"));
 								//Debug.DrawLine(transform.position, uptmp, Color.green);
 								
 								if(inicioFin)
@@ -300,7 +300,7 @@ public class PlayerBall2 : MonoBehaviour {
 								float y = Mathf.Cos(i * Mathf.PI / 180);
 								
 								Vector3 uptmp = new Vector3(transform.position.x + radioMayor * y, transform.position.y + radioMayor * x, transform.position.z);
-								RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("Ground"));
+								RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("mapa"));
 								//Debug.DrawLine(transform.position, uptmp, Color.green);
 								
 								if(inicioFin)
@@ -351,7 +351,7 @@ public class PlayerBall2 : MonoBehaviour {
 							float y = Mathf.Cos(i * Mathf.PI / 180);
 							
 							Vector3 uptmp = new Vector3(transform.position.x + radioMayor * y, transform.position.y + radioMayor * x, transform.position.z);
-							RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("Ground"));
+							RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("mapa"));
 							//Debug.DrawLine(transform.position, uptmp, Color.green);
 							
 							if(inicioFin)
@@ -464,7 +464,7 @@ public class PlayerBall2 : MonoBehaviour {
 					float y = Mathf.Cos(i * Mathf.PI / 180);
 					
 					Vector3 uptmp = new Vector3(transform.position.x + radioMayor * y, transform.position.y + radioMayor * x, transform.position.z);
-						RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("Ground"));
+						RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("mapa"));
 					//Debug.DrawLine(transform.position, uptmp, Color.green);
 					
 					if(inicioFin)
@@ -537,7 +537,7 @@ public class PlayerBall2 : MonoBehaviour {
 					float y = Mathf.Cos(i * Mathf.PI / 180);
 					
 					Vector3 uptmp = new Vector3(transform.position.x + radioMayor * y, transform.position.y + radioMayor * x, transform.position.z);
-						RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("Ground"));
+						RaycastHit2D hitUptmp = Physics2D.Linecast(transform.position, uptmp, 1 << LayerMask.NameToLayer("mapa"));
 					//Debug.DrawLine(transform.position, uptmp, Color.green);
 					
 					if(inicioFin)

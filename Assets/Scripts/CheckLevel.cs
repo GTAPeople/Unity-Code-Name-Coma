@@ -47,7 +47,9 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[0]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=1)){
+			if((_textureUnlock.Length!=0)&&
+			   (_textureUnlock.Length<=_totalLevel)&&
+			   (_textureUnlock.Length>=1)){
 				GUI.skin = _textureUnlock[0];
 			}else{
 				GUI.skin = null;
