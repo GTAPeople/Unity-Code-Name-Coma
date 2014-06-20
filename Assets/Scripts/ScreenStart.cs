@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameStart : MonoBehaviour {
+public class ScreenStart : MonoBehaviour {
 	private float vertExtent;		// The size of vertical of the screen.
 	private float horzExtent;		// The size of horizontal of the screen.
 

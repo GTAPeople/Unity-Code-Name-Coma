@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameMenu : MonoBehaviour {
+public class ScreenMenu : MonoBehaviour {
 	public GUISkin _skinNuevo;
 	public GUISkin _skinContinuar;
 	public GUISkin _skinSalir;
@@ -36,9 +36,9 @@ public class GameMenu : MonoBehaviour {
 			PlayerPrefs.SetInt("CountCheck",0);
 //			PlayerPrefs.DeleteAll();
 			Application.LoadLevel("LevelScene");
+//			Application.LoadLevel("Game");
 		}
 		if (GUI.Button(rectBotonContinuar, "CONTINUAR")){
-			//Application.LoadLevel("Game");
 			Application.LoadLevel("CheckLevel");			
 		}
 		if (GUI.Button (rectBotonSalir, "SALIR DEL JUEGO")) {

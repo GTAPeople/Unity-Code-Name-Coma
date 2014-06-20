@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CheckLevel : MonoBehaviour {
+public class ScreenLevel : MonoBehaviour {
 	public GUISkin _textureLock;
 	public GUISkin[] _textureUnlock;
 	public GUISkin _textureRegresar;
@@ -47,10 +47,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[0]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&
-			   (_textureUnlock.Length<=_totalLevel)&&
-			   (_textureUnlock.Length>=1)){
-				GUI.skin = _textureUnlock[0];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=1)){
+					GUI.skin = _textureUnlock[0];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -66,8 +66,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[1]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=2)){
-				GUI.skin = _textureUnlock[1];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=2)){
+					GUI.skin = _textureUnlock[1];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -83,8 +85,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[2]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=3)){
-				GUI.skin = _textureUnlock[2];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=3)){
+					GUI.skin = _textureUnlock[2];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -100,8 +104,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[3]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=4)){
-				GUI.skin = _textureUnlock[3];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=4)){
+					GUI.skin = _textureUnlock[3];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -117,8 +123,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[4]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=5)){
-				GUI.skin = _textureUnlock[4];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=5)){
+					GUI.skin = _textureUnlock[4];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -134,8 +142,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[5]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=6)){
-				GUI.skin = _textureUnlock[5];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=6)){
+					GUI.skin = _textureUnlock[5];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -151,8 +161,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[6]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=7)){
-				GUI.skin = _textureUnlock[6];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=7)){
+					GUI.skin = _textureUnlock[6];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -168,8 +180,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[7]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=8)){
-				GUI.skin = _textureUnlock[7];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=8)){
+					GUI.skin = _textureUnlock[7];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -185,8 +199,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[8]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=9)){
-				GUI.skin = _textureUnlock[8];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=9)){
+					GUI.skin = _textureUnlock[8];
+				}
 			}else{
 				GUI.skin = null;
 			}
@@ -202,8 +218,10 @@ public class CheckLevel : MonoBehaviour {
 		if(_checkBool[9]==false){
 			GUI.skin = _textureLock;
 		}else{
-			if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=10)){
-				GUI.skin = _textureUnlock[9];
+			if(_textureUnlock!=null){
+				if((_textureUnlock.Length!=0)&&(_textureUnlock.Length<=_totalLevel)&&(_textureUnlock.Length>=10)){
+					GUI.skin = _textureUnlock[9];
+				}
 			}else{
 				GUI.skin = null;
 			}

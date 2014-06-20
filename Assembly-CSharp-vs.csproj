@@ -49,7 +49,6 @@
      <Compile Include="Assets\Scripts\BoxGizmos.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CameraFollow_.cs" />
-     <Compile Include="Assets\Scripts\CheckLevel.cs" />
      <Compile Include="Assets\Scripts\CheckPoint1.cs" />
      <Compile Include="Assets\Scripts\CheckpointScript.cs" />
      <Compile Include="Assets\Scripts\CollisionDetector.cs" />
@@ -59,8 +58,6 @@
      <Compile Include="Assets\Scripts\DestroyObject.cs" />
      <Compile Include="Assets\Scripts\DestroyPlayer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\GameMenu.cs" />
-     <Compile Include="Assets\Scripts\GameStart.cs" />
      <Compile Include="Assets\Scripts\GotoCheckPoint1.cs" />
      <Compile Include="Assets\Scripts\Iniciar.cs" />
      <Compile Include="Assets\Scripts\MenuScript.cs" />
@@ -76,6 +73,9 @@
      <Compile Include="Assets\Scripts\RayCast2d.cs" />
      <Compile Include="Assets\Scripts\Reinicio.cs" />
      <Compile Include="Assets\Scripts\Sawblade.cs" />
+     <Compile Include="Assets\Scripts\ScreenLevel.cs" />
+     <Compile Include="Assets\Scripts\ScreenMenu.cs" />
+     <Compile Include="Assets\Scripts\ScreenStart.cs" />
      <Compile Include="Assets\Scripts\SpawnPlayer.cs" />
      <Compile Include="Assets\Scripts\Teleport.cs" />
      <Compile Include="Assets\mShadowRayScan\CrearPoligono.cs" />
