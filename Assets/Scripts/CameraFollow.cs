@@ -52,6 +52,15 @@ public class CameraFollow : MonoBehaviour {
 			TrackPlayer();
 			float abyss = minY-vertExtent;
 			if(player.position.y < abyss){
+				PlayerPrefsX.SetBool("PlayerStatus", false);
+
+				GameObject[] lights = GameObject.FindGameObjectsWithTag ("Luz");
+				Debug.Log("tamlig: " + lights.Length);
+				for(int i = 0; i < lights.Length; i++)
+				{
+					Destroy(lights[i]);
+				}
+
 				Destroy(player.gameObject);
 			}
 		}

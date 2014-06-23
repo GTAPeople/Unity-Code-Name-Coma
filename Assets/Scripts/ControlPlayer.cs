@@ -19,7 +19,7 @@ public class ControlPlayer : MonoBehaviour
 
 
 		//
-		private int _faceDirection;
+		private int _faceDirection = 1;
 	
 		//
 		private bool _wallJump = false;

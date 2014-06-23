@@ -89,7 +89,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(hitDown.point != new Vector2(0,0))
 			{
-				Debug.Log("1");
+				//Debug.Log("1");
 
 				if(Vector2.Distance(hitDown.point,new Vector2(transform.position.x, transform.position.y)) < radio)
 				{
@@ -105,7 +105,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(hitRight.point != new Vector2(0,0))
 			{
-				Debug.Log("2");
+				//Debug.Log("2");
 
 
 				if(Vector2.Distance(hitRight.point,new Vector2(transform.position.x, transform.position.y)) < radio)
@@ -151,7 +151,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(hitUp.point != new Vector2(0,0))
 			{
-				Debug.Log("3");
+				//Debug.Log("3");
 
 				if(Vector2.Distance(hitUp.point,new Vector2(transform.position.x, transform.position.y)) < radio)
 				{
@@ -218,7 +218,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(hitLeft.point != new Vector2(0,0))
 			{
-				Debug.Log("4");
+				//Debug.Log("4");
 
 				if(Vector2.Distance(hitLeft.point,new Vector2(transform.position.x, transform.position.y)) < radio)
 				{
@@ -228,7 +228,7 @@ public class PlayerBall2 : MonoBehaviour {
 
 				if(downCollition)
 				{
-					Debug.Log("4.1");
+					//Debug.Log("4.1");
 
 					directionX = -directionX;
 
@@ -280,7 +280,7 @@ public class PlayerBall2 : MonoBehaviour {
 
 				if(upCollition)
 				{
-					Debug.Log("4.2");
+					//Debug.Log("4.2");
 					directionY = -directionY;
 
 						if(rotar == false)
@@ -384,7 +384,7 @@ public class PlayerBall2 : MonoBehaviour {
 			
 			if(directionY > 0 && directionX > 0 && !upCollition && !downCollition && !leftCollition && !rightCollition)
 			{
-				Debug.Log("5");
+				//Debug.Log("5");
 
 				Xtemp = right.x;
 				Ytemp = up.y;
@@ -393,7 +393,7 @@ public class PlayerBall2 : MonoBehaviour {
 			}
 			else if (directionY < 0 && directionX > 0 && !upCollition && !downCollition && !leftCollition && !rightCollition)
 			{
-				Debug.Log("6");
+				//Debug.Log("6");
 
 				Xtemp = right.x;
 				Ytemp = down.y;
@@ -403,7 +403,7 @@ public class PlayerBall2 : MonoBehaviour {
 			}
 			else if (directionY < 0 && directionX < 0 && !upCollition && !downCollition && !leftCollition && !rightCollition)
 			{
-				Debug.Log("7");
+				//Debug.Log("7");
 
 				Xtemp = left.x;
 				Ytemp = down.y;
@@ -411,7 +411,7 @@ public class PlayerBall2 : MonoBehaviour {
 			}
 			else if (directionY > 0 && directionX < 0 && !upCollition && !downCollition && !leftCollition && !rightCollition)
 			{
-				Debug.Log("8");
+				//Debug.Log("8");
 
 				Xtemp = left.x;
 				Ytemp = up.y;
@@ -421,7 +421,7 @@ public class PlayerBall2 : MonoBehaviour {
 
 		if(desplazamiento == 1 && Xtemp != 0 && Ytemp != 0)
 		{
-			Debug.Log("9");
+			//Debug.Log("9");
 
 			if(Mathf.Abs(transform.position.y - Ytemp) >= 0.1f)
 			{
@@ -496,7 +496,7 @@ public class PlayerBall2 : MonoBehaviour {
 
 		if(desplazamiento == 2 && Xtemp != 0 && Ytemp != 0)
 		{
-			Debug.Log("10");
+			//Debug.Log("10");
 
 			if(Mathf.Abs(transform.position.x - Xtemp) >= 0.1f)
 			{
@@ -599,4 +599,6 @@ public class PlayerBall2 : MonoBehaviour {
 			desplazamiento = 0;
 		}
 	}
+
+
 }

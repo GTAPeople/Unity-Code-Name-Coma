@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\Continue.cs" />
      <Compile Include="Assets\Scripts\ControlPlayer.cs" />
      <Compile Include="Assets\Scripts\DeathScreen.cs" />
+     <Compile Include="Assets\Scripts\DestroyLigth.cs" />
      <Compile Include="Assets\Scripts\DestroyObject.cs" />
      <Compile Include="Assets\Scripts\DestroyPlayer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -70,8 +71,10 @@
      <Compile Include="Assets\Scripts\PlayerBall2.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerPrefsX.cs" />
+     <Compile Include="Assets\Scripts\PuntoPartidaLuz.cs" />
      <Compile Include="Assets\Scripts\RayCast2d.cs" />
      <Compile Include="Assets\Scripts\Reinicio.cs" />
+     <Compile Include="Assets\Scripts\RenderMap.cs" />
      <Compile Include="Assets\Scripts\Sawblade.cs" />
      <Compile Include="Assets\Scripts\ScreenLevel.cs" />
      <Compile Include="Assets\Scripts\ScreenMenu.cs" />
@@ -82,7 +85,7 @@
      <Compile Include="Assets\mShadowRayScan\LineRenderer2.cs" />
      <Compile Include="Assets\mShadowRayScan\MovimientoPersonaje.cs" />
      <Compile Include="Assets\mShadowRayScan\ShadowRayCast.cs" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\standard assets\skyboxes\_skybox info.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">

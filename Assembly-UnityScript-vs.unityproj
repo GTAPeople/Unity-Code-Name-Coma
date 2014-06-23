@@ -49,7 +49,7 @@
      <Compile Include="Assets\mShadowRayScan\PlayerBall.js" />
      <Compile Include="Assets\mShadowRayScan\ShadowRayCast2d.js" />
      <Compile Include="Assets\mShadowRayScan\ShadowRayScan2.js" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
+     <None Include="Assets\standard assets\skyboxes\_skybox info.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/JoseTomas/Desktop/Project/ComaProject/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>

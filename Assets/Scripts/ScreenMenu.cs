@@ -34,6 +34,7 @@ public class ScreenMenu : MonoBehaviour {
 		if (GUI.Button (rectBotonNewGame, "NUEVO JUEGO")){
 			PlayerPrefsX.SetVector3("CheckSpawn", Vector3.zero);
 			PlayerPrefs.SetInt("CountCheck",0);
+			PlayerPrefsX.SetVector3 ("OldLevelLight",new Vector3(-12,1,0));
 //			PlayerPrefs.DeleteAll();
 			Application.LoadLevel("LevelScene");
 //			Application.LoadLevel("Game");

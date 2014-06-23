@@ -162,4 +162,9 @@ public class RayCast2d : MonoBehaviour {
 		initialAngle += sentido * grados;
 		lastAngle += sentido * grados;
 	}
+
+	void OnDestroy() {
+		Destroy(LuzDelantera1);
+		Destroy(LuzTrasera1);
+	}
 }

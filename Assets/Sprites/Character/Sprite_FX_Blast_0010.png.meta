@@ -35,7 +35,6 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
@@ -55,7 +54,6 @@ TextureImporter:
         height: 24
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0010_1
       rect:
         serializedVersion: 2
@@ -65,7 +63,6 @@ TextureImporter:
         height: 46
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0010_2
       rect:
         serializedVersion: 2
@@ -75,7 +72,6 @@ TextureImporter:
         height: 28
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0010_3
       rect:
         serializedVersion: 2
@@ -85,7 +81,6 @@ TextureImporter:
         height: 24
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0010_4
       rect:
         serializedVersion: 2
@@ -95,7 +90,6 @@ TextureImporter:
         height: 17
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0010_5
       rect:
         serializedVersion: 2
@@ -105,7 +99,6 @@ TextureImporter:
         height: 8
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: Sprite_FX_Blast_0010_6
       rect:
         serializedVersion: 2
@@ -115,6 +108,5 @@ TextureImporter:
         height: 17
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject _teleport;
 	public GameObject _deathScreen;
+	public GameObject _luz;
 
 	private GameObject _currentPlayer;
 	private Vector3 _checkpoint;
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour {
 	private bool handle = true;
 	private bool checkBG = false;
 	private int _countCheck;
+
+	private bool _StartGame = false;
 
 	// Awake is used to initialize any variables or game state before the game starts
 	void Awake () {
@@ -70,6 +73,26 @@ public class GameManager : MonoBehaviour {
 		if(!_currentTeleport){
 			_currentTeleport = Instantiate (_teleport, spawnPos, Quaternion.identity) as GameObject;
 		}
+		Instantiate(_luz, new Vector3(spawnPos.x,-1.190162f,0.0f), Quaternion.identity);
+		if(_StartGame == false)
+		{
+			InvokeRepeating("CreateLight", 3.0f, 5.0f);
+			_StartGame = true;
+		}
+
+	}
+
+	private void CreateLight(){
+		Vector3 lightPosition = PlayerPrefsX.GetVector3 ("OldLevelLight",new Vector3(-12,1,0));
+
+		Debug.Log("LP:" + lightPosition.x);
+
+		bool status = PlayerPrefsX.GetBool("PlayerStatus", true);
+		if(status)
+		{
+			Instantiate(_luz, lightPosition, Quaternion.identity);
+		}
+
 	}
 
 	// A public method for Checkpoint script only
