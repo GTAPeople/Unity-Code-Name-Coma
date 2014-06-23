@@ -36,8 +36,8 @@ public class ScreenMenu : MonoBehaviour {
 			PlayerPrefs.SetInt("CountCheck",0);
 			PlayerPrefsX.SetVector3 ("OldLevelLight",new Vector3(-12,1,0));
 //			PlayerPrefs.DeleteAll();
-			Application.LoadLevel("LevelScene");
-//			Application.LoadLevel("Game");
+//			Application.LoadLevel("LevelScene");
+			Application.LoadLevel("Game");
 		}
 		if (GUI.Button(rectBotonContinuar, "CONTINUAR")){
 			Application.LoadLevel("CheckLevel");			

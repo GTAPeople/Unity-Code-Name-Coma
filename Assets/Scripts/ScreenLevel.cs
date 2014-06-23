@@ -60,7 +60,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[0]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[0]);
 				PlayerPrefs.SetInt("CountCheck",1);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[1]==false){
@@ -79,7 +79,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[1]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[1]);
 				PlayerPrefs.SetInt("CountCheck",2);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[2]==false){
@@ -98,7 +98,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[2]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[2]);
 				PlayerPrefs.SetInt("CountCheck",3);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[3]==false){
@@ -117,7 +117,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[3]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[3]);
 				PlayerPrefs.SetInt("CountCheck",4);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[4]==false){
@@ -136,7 +136,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[4]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[4]);
 				PlayerPrefs.SetInt("CountCheck",5);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[5]==false){
@@ -155,7 +155,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[5]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[5]);
 				PlayerPrefs.SetInt("CountCheck",6);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[6]==false){
@@ -174,7 +174,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[6]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[6]);
 				PlayerPrefs.SetInt("CountCheck",7);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[7]==false){
@@ -193,7 +193,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[7]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[7]);
 				PlayerPrefs.SetInt("CountCheck",8);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[8]==false){
@@ -212,7 +212,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[8]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[8]);
 				PlayerPrefs.SetInt("CountCheck",9);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 		if(_checkBool[9]==false){
@@ -231,7 +231,7 @@ public class ScreenLevel : MonoBehaviour {
 			if(_checkBool[9]==true){
 				PlayerPrefsX.SetVector3("CheckSpawn",_checkVector[9]);
 				PlayerPrefs.SetInt("CountCheck",10);
-				Application.LoadLevel("LevelScene");
+				Application.LoadLevel("Game");
 			}
 		}
 
