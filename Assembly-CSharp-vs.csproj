@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\MenuScript.cs" />
      <Compile Include="Assets\Scripts\MoveObject2D.cs" />
      <Compile Include="Assets\Scripts\MoveObject2DCircle.cs" />
+     <Compile Include="Assets\Scripts\MusicManager.cs" />
      <Compile Include="Assets\Scripts\ParallaxBackgroundsSky.cs" />
      <Compile Include="Assets\Scripts\ParallaxScrollingBG.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />

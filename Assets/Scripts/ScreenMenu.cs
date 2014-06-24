@@ -24,14 +24,10 @@ public class ScreenMenu : MonoBehaviour {
 	void OnGUI(){
 		float width = Screen.width/4;
 		float height = Screen.height/8;
+
 		GUI.skin = _skinNuevo;
 		Rect rectBotonNewGame =  new Rect((Screen.width-width)/2,(Screen.height*.25f)-height/2, width,height);
-		GUI.skin = _skinContinuar;
-		Rect rectBotonContinuar = new Rect((Screen.width-width)/2,(Screen.height*.50f)-height/2, width,height);
-		GUI.skin = _skinSalir;
-		Rect rectBotonSalir = new Rect ((Screen.width-width)/2, (Screen.height*.75f)-height/2, width,height);
-
-		if (GUI.Button (rectBotonNewGame, "NUEVO JUEGO")){
+		if (GUI.Button (rectBotonNewGame, "")){
 			PlayerPrefsX.SetVector3("CheckSpawn", Vector3.zero);
 			PlayerPrefs.SetInt("CountCheck",0);
 			PlayerPrefsX.SetVector3 ("OldLevelLight",new Vector3(-12,1,0));
@@ -39,10 +35,17 @@ public class ScreenMenu : MonoBehaviour {
 //			Application.LoadLevel("LevelScene");
 			Application.LoadLevel("Game");
 		}
-		if (GUI.Button(rectBotonContinuar, "CONTINUAR")){
+
+		GUI.skin = _skinContinuar;
+		Rect rectBotonContinuar = new Rect((Screen.width-width)/2,(Screen.height*.50f)-height/2, width,height);
+
+		if (GUI.Button(rectBotonContinuar, "")){
 			Application.LoadLevel("CheckLevel");			
 		}
-		if (GUI.Button (rectBotonSalir, "SALIR DEL JUEGO")) {
+
+		GUI.skin = _skinSalir;
+		Rect rectBotonSalir = new Rect ((Screen.width-width)/2, (Screen.height*.75f)-height/2, width,height);
+		if (GUI.Button (rectBotonSalir, "")) {
 			Application.Quit();
 		}
 	}

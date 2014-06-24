@@ -237,7 +237,7 @@ public class ScreenLevel : MonoBehaviour {
 
 		GUI.skin = _textureRegresar;
 		Rect rectBotonRegresar = new Rect ((Screen.width-width)/2,(Screen.height*.8f)-height/2,width*2,height);
-		if (GUI.Button (rectBotonRegresar,"VOLVER AL MENU PRINCIPAL")){
+		if (GUI.Button (rectBotonRegresar,"")){
 			Application.LoadLevel("GameMenu");
 		}
 	}
