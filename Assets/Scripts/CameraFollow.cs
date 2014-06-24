@@ -27,6 +27,9 @@ public class CameraFollow : MonoBehaviour {
 		minX = horzExtent + deadStart.transform.position.x + (deadStart.GetComponent<BoxCollider2D>().size.x/2);
 		maxX = deadEnd.transform.position.x - deadEnd.GetComponent<BoxCollider2D>().size.x/2 - horzExtent;
 //		Debug.Log (Screen.width);
+		if(PlayerPrefsX.GetVector3("CheckSpawn")!=Vector3.zero){
+			transform.position = new Vector3(PlayerPrefsX.GetVector3("CheckSpawn").x, transform.position.y,transform.position.z);
+		}
 	}
 
 	bool CheckXMargin()
