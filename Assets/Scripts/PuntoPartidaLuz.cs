@@ -12,11 +12,11 @@ public class PuntoPartidaLuz : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		bool status = PlayerPrefsX.GetBool("PlayerStatus");
-		if(!status )
+		/*bool status = PlayerPrefsX.GetBool("PlayerStatus");
+		if(!status)
 		{
 			Destroy(gameObject);
-		}                        
+		}   */                     
 
 	}
 

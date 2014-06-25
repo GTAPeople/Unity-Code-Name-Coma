@@ -14,17 +14,40 @@ public class DestroyLigth : MonoBehaviour {
 
 		Transform[] AllChildren = GetComponentsInChildren<Transform>();
 		float mayor = -999999999.0f;
+		float menor = 999999999.0f;
 		for(int i = 0; i < AllChildren.Length; i++)
 		{
 			if(AllChildren[i].position.x > mayor)
 			{
 				mayor = AllChildren[i].position.x;
 			}
+
+			if(AllChildren[i].position.x < menor)
+			{
+				menor = AllChildren[i].position.x;
+			}
 		}
 
-		if(mayor  - Camera.main.transform.position.x > 30)
+		float cameraPositionX = Camera.main.transform.position.x;
+		if(mayor > cameraPositionX)
+		{
+			if(mayor - cameraPositionX > 30)
+			{
+				Destroy(gameObject);
+			}
+		}
+		else
+		{
+			if(cameraPositionX - mayor > 30)
+			{
+				Destroy(gameObject);
+			}
+		}
+
+
+		/*if(Camera.main.transform.position.x - transform.position.x > 20 )
 		{
 			Destroy(gameObject);
-		}
+		}*/
 	}
 }

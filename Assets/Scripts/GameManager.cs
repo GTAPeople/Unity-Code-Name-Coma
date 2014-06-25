@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour {
 		Instantiate(_luz, new Vector3(spawnPos.x,-1.190162f,0.0f), Quaternion.identity);
 		if(_StartGame == false)
 		{
-			InvokeRepeating("CreateLight", 3.0f, 5.0f);
+			InvokeRepeating("CreateLight", 0.1f, 0.1f);
 			_StartGame = true;
 		}
 
@@ -85,12 +85,38 @@ public class GameManager : MonoBehaviour {
 	private void CreateLight(){
 		Vector3 lightPosition = PlayerPrefsX.GetVector3 ("OldLevelLight",new Vector3(-12,1,0));
 
-		Debug.Log("LP:" + lightPosition.x);
+		//Debug.Log("LP:" + lightPosition.x);
 
 		bool status = PlayerPrefsX.GetBool("PlayerStatus", true);
 		if(status)
 		{
-			Instantiate(_luz, lightPosition, Quaternion.identity);
+			bool nearLight = false;
+			GameObject[] lights = GameObject.FindGameObjectsWithTag ("ColaLuz");
+			float menor = 99999999999.0f;
+			for(int i = 0; i < lights.Length; i++)
+			{
+				//Debug.Log("--- " + (lightPosition.x - lights[i].transform.position.x));
+				if(lights[i].transform.position.x < menor)
+				{
+					menor = lights[i].transform.position.x;
+				}
+
+			}
+
+			Debug.Log("--- " + (menor - lightPosition.x));
+			if(Mathf.Abs(menor - lightPosition.x) < 20)
+			{
+				nearLight = true;
+			}
+
+
+
+			if(!nearLight)
+			{
+				Instantiate(_luz, lightPosition, Quaternion.identity);
+			}
+
+			//Instantiate(_luz, lightPosition, Quaternion.identity);
 		}
 
 	}

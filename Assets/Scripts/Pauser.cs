@@ -29,10 +29,16 @@ public class Pauser : MonoBehaviour {
 			waited = false;
 			Invoke("waiting",0.3f); 
 		}
-		if (_paused)
-			Time.timeScale = 0;
+		if (_paused) 
+		{
+			Time.timeScale = 0; 
+			PlayerPrefsX.SetBool("Pause", true);
+		}
 		else
+		{
 			Time.timeScale = 1;
+			PlayerPrefsX.SetBool("Pause", false);
+		}
 	}
 
 	private void OnGUI (){

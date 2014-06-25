@@ -272,7 +272,7 @@ public class PlayerBall2 : MonoBehaviour {
 								}
 							}
 							angle = (finAngulo - inicioAngulo);
-							Debug.Log(angle * 180 / Mathf.PI);
+							//Debug.Log(angle * 180 / Mathf.PI);
 							rotar = true; 
 							directionAngulo = -1;
 						}
@@ -374,7 +374,7 @@ public class PlayerBall2 : MonoBehaviour {
 							}
 						}
 						angle = (finAngulo - inicioAngulo);
-						Debug.Log(angle * 180 / Mathf.PI);
+						//Debug.Log(angle * 180 / Mathf.PI);
 						rotar = true; 
 						directionAngulo = -1;
 					}
@@ -423,14 +423,16 @@ public class PlayerBall2 : MonoBehaviour {
 		{
 			//Debug.Log("9");
 
-			if(Mathf.Abs(transform.position.y - Ytemp) >= 0.1f)
+			//if(Mathf.Abs(transform.position.y - Ytemp) >= 0.1f)
+			if(Mathf.Abs(transform.position.y - Ytemp) >= Mathf.Abs(directionY))
 			{
 				movimiento += new Vector3(0, directionY, 0);
 				//Debug.Log("9.1");
 			}
 			else
 			{
-				if(Mathf.Abs(transform.position.x - Xtemp) >= 0.1f)
+				//if(Mathf.Abs(transform.position.x - Xtemp) >= 0.1f)
+				if(Mathf.Abs(transform.position.x - Xtemp) >= Mathf.Abs(directionX))
 				{
 					movimiento += new Vector3(directionX, 0, 0);
 					//Debug.Log("9.2");
@@ -498,14 +500,16 @@ public class PlayerBall2 : MonoBehaviour {
 		{
 			//Debug.Log("10");
 
-			if(Mathf.Abs(transform.position.x - Xtemp) >= 0.1f)
+			//if(Mathf.Abs(transform.position.x - Xtemp) >= 0.1f)
+			if(Mathf.Abs(transform.position.x - Xtemp) >= Mathf.Abs(directionX ))
 			{
 				movimiento += new Vector3(directionX, 0, 0);
 				//Debug.Log("10.1");
 			}
 			else
 			{
-				if(Mathf.Abs(transform.position.y - Ytemp) >= 0.1f)
+				//if(Mathf.Abs(transform.position.y - Ytemp) >= 0.1f)
+				if(Mathf.Abs(transform.position.y - Ytemp) >= Mathf.Abs(directionY))
 				{
 					movimiento += new Vector3(0, directionY, 0);
 					//Debug.Log("10.2");
@@ -580,7 +584,12 @@ public class PlayerBall2 : MonoBehaviour {
 		}
 
 
-			transform.position += movimiento;
+			bool pause = PlayerPrefsX.GetBool("pause");
+			if(!pause)
+			{
+				transform.position += movimiento;
+			}
+
 			upCollition = false;
 			downCollition = false;
 			leftCollition = false;
@@ -589,7 +598,7 @@ public class PlayerBall2 : MonoBehaviour {
 
 
 
-		if(transform.position.x > 500)
+		/*if(transform.position.x > 500)
 		{
 			transform.position = new Vector3(-30,0,0);
 			directionX = 0.1f;
@@ -597,7 +606,7 @@ public class PlayerBall2 : MonoBehaviour {
 			Xtemp = 0;
 			Ytemp = 0;
 			desplazamiento = 0;
-		}
+		}*/
 	}
 
 
